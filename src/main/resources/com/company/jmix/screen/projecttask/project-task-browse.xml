@@ -8,6 +8,7 @@
                     class="com.company.jmix.entity.ProjectTask">
             <fetchPlan extends="_base">
                 <property name="assignee" fetchPlan="_base"/>
+                <property name="project" fetchPlan="_base"/>
             </fetchPlan>
             <loader id="projectTasksDl">
                 <query>
@@ -46,6 +47,7 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
+                <column id="project"/>
                 <column id="name"/>
                 <column id="startDate"/>
                 <column id="endDate"/>

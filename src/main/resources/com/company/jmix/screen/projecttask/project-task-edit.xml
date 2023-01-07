@@ -7,6 +7,7 @@
                   class="com.company.jmix.entity.ProjectTask">
             <fetchPlan extends="_base">
                 <property name="assignee" fetchPlan="_base"/>
+                <property name="project" fetchPlan="_base"/>
             </fetchPlan>
             <loader/>
         </instance>
@@ -39,6 +40,7 @@
                         <action id="entityClear" type="entity_clear"/>
                     </actions>
                 </entityPicker>
+                <entityPicker id="projectField" property="project"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

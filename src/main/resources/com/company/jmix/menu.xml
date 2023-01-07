@@ -7,6 +7,8 @@
         <item screen="Project.browse" caption="msg://com.company.jmix.screen.project/projectBrowse.menu"/>
         <item screen="ProjectTask.browse" caption="msg://com.company.jmix.screen.projecttask/projectTaskBrowse.menu"/>
         <item screen="TimeEntity.browse" caption="msg://com.company.jmix.screen.timeentity/timeEntityBrowse.menu"/>
+        <item screen="ProjectStats.browse"
+              caption="msg://com.company.jmix.screen.projectstats/projectStatsBrowse.menu"/>
     </menu>
 
 </menu-config>

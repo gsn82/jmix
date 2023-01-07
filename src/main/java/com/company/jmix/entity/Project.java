@@ -7,18 +7,20 @@ import io.jmix.core.metamodel.annotation.JmixEntity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @JmixEntity
-@Table(name = "PROJECT", indexes = {
-        @Index(name = "IDX_PROJECT_", columnList = "")
-})
+@Table(name = "PROJECT")
 @Entity
 public class Project {
     @JmixGeneratedValue
     @Column(name = "ID", nullable = false)
     @Id
     private UUID id;
+
+    @OneToMany(mappedBy = "project")
+    private List<ProjectTask> tasks;
 
     @InstanceName
     @Column(name = "NAME", nullable = false)
@@ -34,6 +36,15 @@ public class Project {
     @JoinColumn(name = "MANAGER_ID")
     @ManyToOne(fetch = FetchType.LAZY)
     private User manager;
+
+    public List<ProjectTask> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<ProjectTask> tasks) {
+        this.tasks = tasks;
+    }
+
 
     public void setManager(User manager) {
         this.manager = manager;

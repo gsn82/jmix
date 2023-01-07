@@ -11,7 +11,9 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @JmixEntity
-@Table(name = "PROJECT_TASK")
+@Table(name = "PROJECT_TASK", indexes = {
+        @Index(name = "IDX_PROJECT_TASK_PROJECT", columnList = "PROJECT_ID")
+})
 @Entity
 public class ProjectTask {
     @JmixGeneratedValue
@@ -37,6 +39,17 @@ public class ProjectTask {
     @JoinColumn(name = "ASSIGNEE_ID")
     @ManyToOne(fetch = FetchType.LAZY)
     private User assignee;
+    @JoinColumn(name = "PROJECT_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Project project;
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
 
     public void setAssignee(User assignee) {
         this.assignee = assignee;
