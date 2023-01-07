@@ -6,6 +6,7 @@ import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -23,7 +24,9 @@ public class TimeEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private ProjectTask task;
 
-    @Column(name = "TIME_SPENT")
+    @NotNull
+    @PositiveOrZero
+    @Column(name = "TIME_SPENT", nullable = false)
     private Integer timeSpent;
 
     @Column(name = "ENTRY_DATE", nullable = false)
