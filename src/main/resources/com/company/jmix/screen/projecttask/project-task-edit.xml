@@ -32,7 +32,7 @@
             <column width="350px">
                 <textField id="nameField" property="name"/>
                 <dateField id="startDateField" property="startDate"/>
-                <textField id="endDateField" property="endDate"/>
+                <dateField id="endDateField" property="endDate"/>
                 <textField id="estimateEffortsField" property="estimateEfforts"/>
                 <entityPicker id="essigneeField" property="assignee">
                     <actions>
